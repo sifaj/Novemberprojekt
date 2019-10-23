@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projekt
 {
-    class JuryMember
+    class Meat : Ingredient
     {
-
-
-
-        
     }
 }
