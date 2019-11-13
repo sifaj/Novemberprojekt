@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace Projekt
 {
-    class Base : Ingredient
+    class Modifier : Ingredient
     {
+
+
+
+        public Modifier()
+        {
+
+        }
     }
 }

@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace Projekt
 {
-    class Meat : Ingredient
+    class Garnish : Ingredient
     {
+
+
+
+        public Garnish()
+        {
+
+        }
     }
 }

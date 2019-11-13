@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RestSharp;
+using Newtonsoft.Json;
+using System.Threading;
 
 namespace Projekt
 {
@@ -10,7 +13,11 @@ namespace Projekt
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("In this game your mission is to combine the perfect cocktail using the provided ingredients! \nA group of three judges will score the cocktail based on their taste and preference.");
 
+            Spirit alcohol = new Spirit();
+
+            Console.ReadKey();
 
 
         }

@@ -8,7 +8,7 @@ namespace Projekt
 {
     class JuryMember
     {
-
+        string preference = "";
 
 
         
