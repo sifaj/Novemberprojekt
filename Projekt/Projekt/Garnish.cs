@@ -13,7 +13,8 @@ namespace Projekt
 
         public Garnish()
         {
-
+            Console.WriteLine("\nWhat type of spirit do you want to add?\n1.Nutmeg  2.Lime Twist  3.Pineapple Wedge");
+            type = TypeList[Utils.Choice(1, 3) - 1];
         }
 
         public void Nutmeg()

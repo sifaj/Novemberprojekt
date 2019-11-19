@@ -19,7 +19,7 @@ namespace Projekt
             {
                 int.TryParse(Console.ReadLine(), out returnValue);
 
-                if (returnValue == 0)
+                if (returnValue > maxChoice || returnValue < minChoice)
                 {
                     Console.WriteLine("Not compliable. Choose a number between " + minChoice + " and " + maxChoice + " as input.");
                     check = false;
@@ -32,5 +32,7 @@ namespace Projekt
 
             return 1;
         }
+
+
     }
 }
