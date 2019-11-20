@@ -11,8 +11,7 @@ namespace Projekt
         List<string> TypeList = new List<string>() { "Whiskey", "Tequila", "Rum", "Gin", "Vodka" }; // Listan med de olika spritsorterna instansen kan få som för med sig olika värden för dess egenskaper.
         int percentage = 0;
         // string name = "";
-        static bool InstanceExists = false;
-        static Random generator = new Random(); // En random generator som är static för att inte få samma värde
+        static bool InstanceExists = false; 
 
         public Spirit()
         {

@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace Projekt
 {
-    class JuryMember
+    class JuryMember : Utils
     {
         string preference = "";
 
-
+        public JuryMember()
+        {
+            
+        }
         
     }
 }
