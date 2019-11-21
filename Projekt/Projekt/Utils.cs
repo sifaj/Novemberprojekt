@@ -38,5 +38,13 @@ namespace Projekt
         {
             return generator.Next(min, max);
         }
+
+        public static int ScoreCounter(int one, int two, int three, int four)
+        {
+            int sum = one + two + three + four;
+            return sum;
+        }
+
+
     }
 }

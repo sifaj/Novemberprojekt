@@ -15,7 +15,20 @@ namespace Projekt
         protected int bitterness = 0;
         protected string type = "";
 
+        public int getSweet()
+        {
+            return sweetness;
+        }
 
+        public int getSour()
+        {
+            return sourness;
+        }
+
+        public int getBitter()
+        {
+            return bitterness;
+        }
 
 
 
