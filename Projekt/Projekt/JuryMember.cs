@@ -18,7 +18,7 @@ namespace Projekt
             
         }
 
-        public int Score (int sweet, int sour, int bitter)
+        public void Score (int sweet, int sour, int bitter)
         {
             int score = 0;
 
@@ -40,7 +40,7 @@ namespace Projekt
                 score++;
             }
 
-            return 0;
+            Console.WriteLine("Score: " + score);
         }
         
     }

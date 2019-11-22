@@ -38,19 +38,20 @@ namespace Projekt
             Console.WriteLine("\nSlot 2: 1.Add spirit 2.Add modifier 3.Skip slot");
 
             input = Utils.Choice(1, 3);
-            
+            Ingredient s2; // Lagrar en referens till namnet "s2" i klassen ingredient.
+
             if (input == 1)
             {
                 Thread.Sleep(500);
-                Ingredient s2 = new Spirit();
+                s2 = new Spirit(); // Om spelaren skriver in 1 blir s2 en spritsort.
 
                 Thread.Sleep(1000);
             }
 
-            if (input == 2) 
+            else // Om annat blir s2 en modifier.
             {
                 Thread.Sleep(500);
-                Ingredient s2 = new Modifier();
+                s2 = new Modifier();
 
                 Thread.Sleep(1000);
             }
@@ -58,20 +59,22 @@ namespace Projekt
             //
 
             Console.WriteLine("\nSlot 3: 1.Add spirit 2.Add modifier 3.Skip slot");
-            input = Utils.Choice(1, 3);
-            if (input == 1)
 
+            input = Utils.Choice(1, 3);
+            Ingredient s3; // Samma princip som ovan. 
+
+            if (input == 1)              
             {
                 Thread.Sleep(500);
-                Ingredient s3 = new Spirit();
+                s3 = new Spirit();
 
                 Thread.Sleep(1000);
             }
 
-            else if (input == 2)
+            else
             {
                 Thread.Sleep(500);
-                Ingredient s3 = new Modifier();
+                s3 = new Modifier();
 
                 Thread.Sleep(1000);
             }
@@ -82,8 +85,15 @@ namespace Projekt
             Thread.Sleep(500);
             Ingredient s4 = new Garnish();
 
-            int totsweet = Utils.ScoreCounter(s1.getSweet(), ) // KAN INTE KALLA METOD FRÅN EN INSTANS SOM SKAPAS I EN IF-SATS PUCKO
+            int totsweet = Utils.ScoreCounter(s1.getSweet(), s2.getSweet(), s3.getSweet(), s4.getSweet()); // KAN INTE KALLA METOD FRÅN EN INSTANS SOM SKAPAS I EN IF-SATS PUCKO
 
+            int totsour = Utils.ScoreCounter(s1.getSour(), s2.getSour(), s3.getSour(), s4.getSour());
+
+            int totbitter = Utils.ScoreCounter(s1.getBitter(), s2.getBitter(), s3.getBitter(), s4.getBitter());
+
+            j1.Score(totsweet, totsour, totbitter);
+            j2.Score(totsweet, totsour, totbitter);
+            j3.Score(totsweet, totsour, totbitter);
 
             Console.ReadLine();
 
