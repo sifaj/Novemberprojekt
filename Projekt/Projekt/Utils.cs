@@ -45,6 +45,6 @@ namespace Projekt
             return sum;
         }
 
-
+        
     }
 }
