@@ -10,7 +10,6 @@ namespace Projekt
     {
         List<string> TypeList = new List<string>() { "TonicWater", "OrangeJuice", "Champagne", };
 
-
         public Modifier()
         {
             Console.WriteLine("\nWhat type of modifier do you want to add?\n1.Tonic Water  2.Orange Juice  3.Champagne");
@@ -18,41 +17,22 @@ namespace Projekt
 
             if (type == "TonicWater")
             {
-                TonicWater();
+                Attributes(generator.Next(0, 3), generator.Next(1, 5), bitterness = generator.Next(5, 10));
             }
 
             if (type == "OrangeJuice")
             {
-                OrangeJuice();
+                Attributes(generator.Next(5, 9), generator.Next(2, 7), bitterness = generator.Next(0, 3));
             }
 
             if (type == "Champagne")
             {
-                Champagne();
+                Attributes(generator.Next(0, 3), generator.Next(4, 7), bitterness = generator.Next(2, 5));
             }
 
-        }
-
-        public void TonicWater()
-        {
-            sweetness = ScopeGenerator(0, 3);
-            sourness = ScopeGenerator(1, 5);
-            bitterness = ScopeGenerator(5, 10);
+            GetStats();
 
         }
 
-        public void OrangeJuice()
-        {
-            sweetness = ScopeGenerator(5, 9);
-            sourness = ScopeGenerator(2, 5);
-            bitterness = ScopeGenerator(0, 3);
-        }
-
-        public void Champagne()
-        {
-            sweetness = ScopeGenerator(0, 3);
-            sourness = ScopeGenerator(4, 7);
-            bitterness = ScopeGenerator(2, 5);
-        }
     }
 }

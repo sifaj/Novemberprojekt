@@ -8,6 +8,7 @@ namespace Projekt
 {
     class Utils
     {
+
         protected static Random generator = new Random(); // En random generator som är static för att inte få samma värde
 
         public static int Choice(int minChoice, int maxChoice) // En metod som möjliggör att välja hur många inputs spelaren kan ge, och som ser till att den är giltig inom angett scope.
@@ -34,17 +35,11 @@ namespace Projekt
             return 1;
         }
 
-        public int ScopeGenerator(int min, int max) // Denna metod genererar ett värde mellan de sifforna som anges som min och max, för att kontrollera scopet som värdet ligger i. Denna metod är public för att den ska kunna användas av subklasserna.
-        {
-            return generator.Next(min, max);
-        }
-
         public static int ScoreCounter(int one, int two, int three, int four)
         {
             int sum = one + two + three + four;
             return sum;
-        }
+        }        
 
-        
     }
 }

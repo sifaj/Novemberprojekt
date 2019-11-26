@@ -48,7 +48,7 @@ namespace Projekt
                 Thread.Sleep(1000);
             }
 
-            else // Om annat blir s2 en modifier.
+            else if (input == 2) // Om annat blir s2 en modifier.
             {
                 Thread.Sleep(500);
                 s2 = new Modifier();
@@ -56,7 +56,12 @@ namespace Projekt
                 Thread.Sleep(1000);
             }
 
-            //
+            else
+            {
+                s2 = new Ingredient();
+            }
+
+
 
             Console.WriteLine("\nSlot 3: 1.Add spirit 2.Add modifier 3.Skip slot");
 
@@ -71,7 +76,7 @@ namespace Projekt
                 Thread.Sleep(1000);
             }
 
-            else
+            if (input == 2) // Om annat blir s2 en modifier.
             {
                 Thread.Sleep(500);
                 s3 = new Modifier();
@@ -79,17 +84,25 @@ namespace Projekt
                 Thread.Sleep(1000);
             }
 
+            else 
+            {
+                s3 = new Ingredient();
+            }
+
+
+
+
             //
 
             Console.WriteLine("\nSlot 4 (Garnish):");
             Thread.Sleep(500);
             Ingredient s4 = new Garnish();
 
-            int totsweet = Utils.ScoreCounter(s1.getSweet(), s2.getSweet(), s3.getSweet(), s4.getSweet()); // KAN INTE KALLA METOD FRÅN EN INSTANS SOM SKAPAS I EN IF-SATS PUCKO
+            int totsweet = Utils.ScoreCounter(s1.GetSweet(), s2.GetSweet(), s3.GetSweet(), s4.GetSweet()); 
 
-            int totsour = Utils.ScoreCounter(s1.getSour(), s2.getSour(), s3.getSour(), s4.getSour());
+            int totsour = Utils.ScoreCounter(s1.GetSour(), s2.GetSour(), s3.GetSour(), s4.GetSour());
 
-            int totbitter = Utils.ScoreCounter(s1.getBitter(), s2.getBitter(), s3.getBitter(), s4.getBitter());
+            int totbitter = Utils.ScoreCounter(s1.GetBitter(), s2.GetBitter(), s3.GetBitter(), s4.GetBitter());
 
             j1.Score(totsweet, totsour, totbitter);
             j2.Score(totsweet, totsour, totbitter);

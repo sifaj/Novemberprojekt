@@ -12,45 +12,50 @@ namespace Projekt
         int percentage = 0;
         // string name = "";
         static bool InstanceExists = false; 
+        
 
         public Spirit()
         {
-            
-
             if (InstanceExists == false)
             {
                 type = TypeList[generator.Next(5)];
             }
+
             else if (InstanceExists == true)
             {
                 Console.WriteLine("\nWhat type of spirit do you want to add?\n1.Whiskey  2.Tequila  3.Rum  4.Gin  5.Vodka");
                 type = TypeList[Utils.Choice(1, 5) - 1];
             }
-            
 
-            if (type == "Whiskey")
+
+            if (type == "Whiskey") // Beroende på vilken spritsort det blir kommer instansens egenskaper genereras med hjälp av metoden Attributes.
             {
-                Whiskey();
-            } // Beroende på vilken spritsort det blir kommer respektive metod köra för att slumpa instansens egenskaper.
+                Attributes(generator.Next(0, 5), generator.Next(0, 3), generator.Next(2, 6));
+                percentage = generator.Next(39, 47);
+            } 
 
             if (type == "Tequila")
             {
-                Tequila();
+                Attributes( generator.Next(4, 9), generator.Next(0, 2), generator.Next(0, 3));
+                percentage = generator.Next(39, 47);
             }
 
             if (type == "Rum")
             {
-                Rum();
+                Attributes(generator.Next(6, 10), generator.Next(0, 4), generator.Next(1, 5));
+                percentage = generator.Next(39, 47);
             }
 
             if (type == "Gin")
             {
-                Gin();
+                Attributes(generator.Next(1, 3), generator.Next(1, 4), generator.Next(4, 9));
+                percentage = generator.Next(34, 41);
             }
 
             if (type == "Vodka")
             {
-                Vodka();
+                Attributes(generator.Next(0, 3), generator.Next(0, 3), generator.Next(1, 5));
+                percentage = generator.Next(34, 46);
             }
 
             GetStats();
@@ -59,54 +64,12 @@ namespace Projekt
             
         }
 
-        public void GetStats() // Denna metod skriver ut värdena av de int-variabler instansen har samt vilken typ av sprit det är. 
+        public override void GetStats() // Denna metod skriver ut värdena av de int-variabler instansen har samt vilken typ av sprit det är. 
         {
-            Console.WriteLine("Type: " + type);
-            Console.WriteLine("Percentage: " + percentage + "%");
-            Console.WriteLine("Sweetness: " + sweetness + "/10");
-            Console.WriteLine("Sourness: " + sourness + "/10");
-            Console.WriteLine("Bitterness: " + bitterness + "/10");
+            Console.WriteLine("\nType: " + type + "\nStats: " + "\nPercentage: " + percentage + "%\nSweetness: " + sweetness + "/10\nSourness: " + sourness + "/10\nBitterness: " + bitterness + "/10");
         }
 
-        public void Whiskey()    // Varje spritsort har en egen metod där värden för int-variablerna Percetange (alkoholhalt), sweetness, sourness och bitterness inom ett scope som är realistiskt för varje sort.
-        {
-            percentage = ScopeGenerator(39, 47);
-            sweetness = ScopeGenerator(0, 5);
-            sourness = ScopeGenerator(0, 3);
-            bitterness = ScopeGenerator(2, 6);
-        }
 
-        public void Tequila()
-        {
-            percentage = ScopeGenerator(39, 47);
-            sweetness = ScopeGenerator(4, 9);
-            sourness = ScopeGenerator(0, 2);
-            bitterness = ScopeGenerator(0, 3);
-        }
-
-        public void Rum()
-        {
-            percentage = ScopeGenerator(39, 47);
-            sweetness = ScopeGenerator(6, 10);
-            sourness = ScopeGenerator(0, 4);
-            bitterness = ScopeGenerator(1, 5);
-        }
-
-        public void Gin()
-        {
-            percentage = ScopeGenerator(34, 41);
-            sweetness = ScopeGenerator(1, 3);
-            sourness = ScopeGenerator(1, 6);
-            bitterness = ScopeGenerator(4, 9);
-        }
-
-        public void Vodka()
-        {
-            percentage = ScopeGenerator(34, 46);
-            sweetness = ScopeGenerator(0, 3);
-            sourness = ScopeGenerator(0, 2);
-            bitterness = ScopeGenerator(1, 5);
-        }
 
 
 
