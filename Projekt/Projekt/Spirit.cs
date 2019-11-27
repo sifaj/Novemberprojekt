@@ -11,28 +11,28 @@ namespace Projekt
         List<string> TypeList = new List<string>() { "Whiskey", "Tequila", "Rum", "Gin", "Vodka" }; // Listan med de olika spritsorterna instansen kan få som för med sig olika värden för dess egenskaper.
         int percentage = 0;
         // string name = "";
-        static bool InstanceExists = false; 
+        static bool InstanceExists = false; // Används för att bestämma om en instans av denna subklass redan finns.
         
 
         public Spirit()
         {
-            if (InstanceExists == false)
+            if (InstanceExists == false) // Ifall en instans inte finns slumpas typen av spritsort. 
             {
                 type = TypeList[generator.Next(5)];
             }
 
-            else if (InstanceExists == true)
+            else if (InstanceExists == true) // Ifall en instans finns får spelaren välja vilken spritsort instansen ska ha. 
             {
                 Console.WriteLine("\nWhat type of spirit do you want to add?\n1.Whiskey  2.Tequila  3.Rum  4.Gin  5.Vodka");
                 type = TypeList[Utils.Choice(1, 5) - 1];
             }
 
 
-            if (type == "Whiskey") // Beroende på vilken spritsort det blir kommer instansens egenskaper genereras med hjälp av metoden Attributes.
+            if (type == "Whiskey")  
             {
                 Attributes(generator.Next(0, 5), generator.Next(0, 3), generator.Next(2, 6));
                 percentage = generator.Next(39, 47);
-            } 
+            } // Beroende på vilken spritsort det blir kommer instansens egenskaper genereras med hjälp av metoden Attributes.
 
             if (type == "Tequila")
             {
@@ -58,13 +58,13 @@ namespace Projekt
                 percentage = generator.Next(34, 46);
             }
 
-            GetStats();
+            GetStats(); // Skriver ut stats.
 
-            InstanceExists = true;
+            InstanceExists = true; // Efter den första instansen av spirit skapats i början av spelet blir InstanceExists true. 
             
         }
 
-        public override void GetStats() // Denna metod skriver ut värdena av de int-variabler instansen har samt vilken typ av sprit det är. 
+        public override void GetStats() // Ett inslag av polymorfism, där metoden är likadan som i Ingredients bara att den även skriver ut percentage. 
         {
             Console.WriteLine("\nType: " + type + "\nStats: " + "\nPercentage: " + percentage + "%\nSweetness: " + sweetness + "/10\nSourness: " + sourness + "/10\nBitterness: " + bitterness + "/10");
         }

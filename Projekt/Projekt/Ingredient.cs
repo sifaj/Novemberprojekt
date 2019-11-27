@@ -16,28 +16,28 @@ namespace Projekt
         public int GetSweet()
         {
             return sweetness;
-        }
+        } // Returnar värdet av sweetness.
 
         public int GetSour()
         {
             return sourness;
-        }
+        } // Returnar värdet av sourness.
 
         public int GetBitter()
         {
             return bitterness;
-        }
+        } // Returnar värdet av bitterness.
 
-        public void Attributes(int inputSweet, int inputSour, int inputBitter)
+        public void Attributes(int inputSweet, int inputSour, int inputBitter) // En metod som definierar variablerna sweetness, sourness och bitterness efter input. 
         {
             sweetness = inputSweet;
             sourness = inputSour;
             bitterness = inputBitter;
-        }
+        } 
 
-        public virtual void GetStats()
+        public virtual void GetStats() // En metod som helt enkelt skriver ut stats.
         {
-            Console.WriteLine("\nStats:\nType: " + type + "\nSweetness: " + sweetness + "/10\nSourness: " + sourness + "/10\nBitterness: " + bitterness + "/10");
+            Console.WriteLine("\nStats:\nType: " + type + "\nSweetness: " + sweetness + "/10\nSourness: " + sourness + "/10\nBitterness: " + bitterness + "/10\n");
         }
 
 

@@ -35,11 +35,11 @@ namespace Projekt
             return 1;
         }
 
-        public static int ScoreCounter(int one, int two, int three, int four)
+        public static int ScoreCounter(int one, int two, int three, int four) // Denna metod lägger ihop fyra int:s och returnar summan av dem. Används för att lägga ihop värdet för de olika smakerna på s1, s2, s3 och s4.
         {
             int sum = one + two + three + four;
             return sum;
-        }        
+        }         
 
     }
 }

@@ -61,7 +61,7 @@ namespace Projekt
                 s2 = new Ingredient();
             }
 
-
+            //
 
             Console.WriteLine("\nSlot 3: 1.Add spirit 2.Add modifier 3.Skip slot");
 
@@ -89,9 +89,6 @@ namespace Projekt
                 s3 = new Ingredient();
             }
 
-
-
-
             //
 
             Console.WriteLine("\nSlot 4 (Garnish):");
@@ -111,8 +108,5 @@ namespace Projekt
             Console.ReadLine();
 
         }
-
-
-
     }
 }

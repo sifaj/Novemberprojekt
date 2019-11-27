@@ -10,7 +10,7 @@ namespace Projekt
     {
         List<string> TypeList = new List<string>() { "TonicWater", "OrangeJuice", "Champagne", };
 
-        public Modifier()
+        public Modifier() // Konstruktorn låter spelaren bestämma vilken typ av modifier, för att sedan definiera värden för variablerna sweetness, sourness och bitterness. 
         {
             Console.WriteLine("\nWhat type of modifier do you want to add?\n1.Tonic Water  2.Orange Juice  3.Champagne");
             type = TypeList[Utils.Choice(1, 3) - 1];

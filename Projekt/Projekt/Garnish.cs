@@ -10,7 +10,7 @@ namespace Projekt
     {
         List<string> TypeList = new List<string>() { "Nutmeg", "LimeTwist", "PineappleWedge", };
 
-        public Garnish()
+        public Garnish() // Konstruktorn låter spelaren bestämma vilken typ av garnish, för att sedan definiera värden för variablerna sweetness, sourness och bitterness. 
         {
             Console.WriteLine("\nWhat type of garnish do you want to add?\n1.Nutmeg  2.Lime Twist  3.Pineapple Wedge");
             type = TypeList[Utils.Choice(1, 3) - 1];
